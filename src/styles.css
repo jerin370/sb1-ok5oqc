@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+:root {
+  /* Base Colors */
+  --surface-0: #121212;
+  --surface-1: #1E1E1E;
+  --surface-2: #232323;
+  --surface-3: #252525;
+  --surface-4: #272727;
+  --surface-5: #2C2C2C;
+  --surface-6: #2F2F2F;
+  --surface-8: #323232;
+  --surface-12: #383838;
+  --surface-16: #3D3D3D;
+  --surface-24: #424242;
+
+  /* Accent Colors */
+  --primary: #BB86FC;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --error: #CF6679;
+
+  /* Text Colors */
+  --text-high: rgba(255, 255, 255, 0.87);
+  --text-medium: rgba(255, 255, 255, 0.60);
+  --text-disabled: rgba(255, 255, 255, 0.38);
+}
+
+body {
+  @apply bg-[var(--surface-0)] text-[var(--text-high)];
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Elevation Classes */
+.elevation-1 {
+  background-color: var(--surface-1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.elevation-2 {
+  background-color: var(--surface-2);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.elevation-3 {
+  background-color: var(--surface-3);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+.elevation-4 {
+  background-color: var(--surface-4);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.elevation-6 {
+  background-color: var(--surface-6);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive Container */
+.container-responsive {
+  @apply w-full px-4;
+  max-width: 100%;
+}
+
+@screen sm {
+  .container-responsive {
+    @apply px-6;
+    max-width: 640px;
+  }
+}
+
+@screen md {
+  .container-responsive {
+    max-width: 768px;
+  }
+}
+
+@screen lg {
+  .container-responsive {
+    max-width: 1024px;
+  }
+}
+
+@screen xl {
+  .container-responsive {
+    max-width: 1280px;
+  }
+}
+
+/* Card Styles */
+.card {
+  @apply rounded-lg p-4 transition-all duration-200;
+  background-color: var(--surface-3);
+}
+
+.card:hover {
+  background-color: var(--surface-4);
+  transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn-primary {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200;
+  background-color: var(--primary);
+  color: var(--surface-0);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-variant);
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200;
+  background-color: var(--secondary);
+  color: var(--surface-0);
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Input Styles */
+.input-dark {
+  @apply w-full p-3 rounded-lg transition-all duration-200;
+  background-color: var(--surface-1);
+  border: 1px solid var(--surface-4);
+  color: var(--text-high);
+}
+
+.input-dark:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2);
+  background-color: var(--surface-2);
+}
+
+.input-dark::placeholder {
+  color: var(--text-disabled);
+}
+
+/* Navigation */
+.nav-dark {
+  @apply fixed top-0 w-full z-50;
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--surface-4);
+  backdrop-filter: blur(10px);
+}
+
+/* Grid System */
+.grid-responsive {
+  @apply grid gap-6;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Typography */
+.text-high {
+  color: var(--text-high);
+}
+
+.text-medium {
+  color: var(--text-medium);
+}
+
+.text-disabled {
+  color: var(--text-disabled);
+}
